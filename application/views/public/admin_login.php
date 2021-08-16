@@ -1,4 +1,4 @@
-<?php include('public_header.php'); ?>
+<?php include_once('public_header.php'); ?>
 <div class="container">
     <?php echo form_open('login/admin_login', ['class' => 'form-horizontal']); ?>
     <fieldset>
@@ -49,4 +49,4 @@
     <!-- <?php echo validation_errors(); ?> -->
     </form>
 </div>
-<?php include('public_footer.php'); ?>
+<?php include_once('public_footer.php'); ?>

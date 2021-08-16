@@ -19,14 +19,20 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarColor01">
-                <form class="d-flex">
-                    <input class="form-control me-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                <?= form_open('user/search', ['class' => 'd-flex', 'role' => 'search']) ?>
+                <!-- <form class="d-flex" role="search"> -->
+                <input class="form-control me-sm-2" name="query" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                <?= form_close(); ?>
+                <?= form_error('query', "<p class='navbar-text text-danger'>", '</p>') ?>
+                <!-- </form> -->
             </div>
+            <li>
+                <a class="navbar-brand" href="<?= base_url('user') ?>">Home</a>
+            </li>
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="navbar-brand" href="#">Login</a></li>
-
+                <!-- <?= anchor('admin/login', 'Login') ?> -->
+                <li><a class="navbar-brand" href="login">Login</a></li>
             </ul>
 
 

@@ -19,6 +19,9 @@
             </button>
             <ul class="nav navbar-nav navbar-right">
                 <li>
+                    <a class="navbar-brand" href="<?= base_url('user') ?>">Home</a>
+                </li>
+                <li>
                     <a class="navbar-brand" href="<?= base_url('login/logout') ?>">Logout</a>
                     <!-- <?php anchor('login/logout', 'Logout') ?> -->
                 </li>
@@ -90,6 +93,6 @@
 
 
 
-       
- </div>
+
+        </div>
     </nav>
