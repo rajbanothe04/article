@@ -37,14 +37,28 @@ class Admin extends My_Controller
 	}
 	public function store_article()
 	{
+		$config = [
+			'upload_path' => './uploads',
+			'allowed_types' => 'jpg|jpeg|png|gif',
+		];
+		$this->load->library('upload', $config); //load library to upload image
+		// $this->upload->initialize($config); //We can also initialize config like this
 		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
-		if ($this->form_validation->run('add_article_rules')) {
+		if ($this->form_validation->run('add_article_rules') && $this->upload->do_upload('image')) {
 			$post = $this->input->post();
 			unset($post['submit']); //to remove the submit from array
+			$data = $this->upload->data();
+			// echo "<pre>";
+			// print_r($data);
+			// exit;
+			$image_path = base_url("uploads/" . $data['raw_name'] . $data['file_ext']);
+			// echo $image_path;
+			// exit;
+			$post['image_path'] = $image_path;
 			return $this->_flashAndRedirect(
 				$this->articles->add_article($post),
-				"Article a0dded successfully!",
-				"Article added successfully!"
+				"Article added successfully!",
+				"Article Failed to add, Please try again"
 			);
 			// if ($this->articles->add_article($post)) {
 			// 	$this->session->set_flashdata('feedback', 'Article added successfully!');
@@ -55,7 +69,8 @@ class Admin extends My_Controller
 			// }
 			// return redirect('admin/dashboard');
 		} else {
-			$this->load->view('admin/add_article');
+			$upload_error = $this->upload->display_error();
+			$this->load->view('admin/add_article', compact('upload_error'));
 		}
 	}
 	public function edit_article($article_id)

@@ -1,5 +1,4 @@
 <?php include('admin_header.php'); ?>
-
 <div class="container mt-1" style="width: 50%;">
 
     <div class="d-flex justify-content-end">
@@ -17,7 +16,7 @@
         </div>
     </div>
     <?php endif; ?>
-    <table class="table mt-2">
+    <table class="table mt-2" id="table1">
         <thead>
             <th>Sr.No.</th>
             <th>Title</th>
@@ -86,8 +85,10 @@
         </li>
     </ul> -->
     <?= $this->pagination->create_links(); ?>
+
 </div>
 </div>
+
 <?php include('admin_footer.php'); ?>
 
 

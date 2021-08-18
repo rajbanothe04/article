@@ -38,6 +38,7 @@ class User extends My_Controller
 		// print_r($this->form_validation);
 		if ($this->form_validation->run() == FALSE) {
 			$this->index();
+			// return $this->index();
 		} else {
 			$query = $this->input->post('query');
 

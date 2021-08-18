@@ -49,4 +49,8 @@ class Login extends CI_Controller
 		$this->session->unset_userdata('user_id');
 		return redirect('login');
 	}
+	public function user_register()
+	{
+		$this->load->view('public/user_registration');
+	}
 }

@@ -12,6 +12,9 @@
     <p>
         <?= $article->body ?>
     </p>
+    <?php if (!is_null($article->image_path)) : ?>
+    <img src="<?= $article->image_path ?>" alt="">
+    <?php endif; ?>
 
 </div>
 

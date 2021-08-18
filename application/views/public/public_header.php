@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Articles</a>
+            <a class="navbar-brand" href="<?= base_url('user') ?>">Articles</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
                 aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,11 +27,14 @@
                 <?= form_error('query', "<p class='navbar-text text-danger'>", '</p>') ?>
                 <!-- </form> -->
             </div>
-            <li>
+            <!-- <li>
                 <a class="navbar-brand" href="<?= base_url('user') ?>">Home</a>
+            </li> -->
+            <li>
+                <a class="navbar-brand" href="<?= base_url('login/user_register') ?>">Registration</a>
             </li>
             <ul class="nav navbar-nav navbar-right">
-                <!-- <?= anchor('admin/login', 'Login') ?> -->
+                <!-- <?= anchor('login', 'Login') ?> -->
                 <li><a class="navbar-brand" href="login">Login</a></li>
             </ul>
 
