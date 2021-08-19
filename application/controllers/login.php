@@ -51,6 +51,8 @@ class Login extends CI_Controller
 	}
 	public function user_register()
 	{
+		$this->load->helper('form');
+		$this->load->library('form_validation');
 		$this->load->view('public/user_registration');
 	}
 }

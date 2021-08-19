@@ -9,35 +9,35 @@
                 <div class="col-lg-6">
 
                     <div class="form-group">
-                        <label for="exampleInputName" class="form-label mt-4">Full Name<span
-                                style="color:red">*</span></label>
-                        <input type="name" class="form-control" id="exampleInputName" placeholder="Enter your name">
+                        <label for="exampleInputName" class="form-label mt-4">Full Name<spanwam style="color:red">
+                                *</span></label>
+                        <?php echo form_input(['name' => 'name', 'class' => 'form-control', 'placeholder' => 'Enter your name', 'value' => set_value('name')]); ?>
+                        <!-- <input type="name" class="form-control" id="exampleInputName" placeholder="Enter your name"> -->
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1" class="form-label mt-4">Password<span
                                 style="color:red">*</span></label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <?php echo form_password(['name' => 'password', 'class' => 'form-control', 'placeholder' => 'Enter Password']); ?>
                     </div>
                     <div class="form-group">
-                        <label for="exampleSelect1" class="form-label mt-4">Select Country<span
+                        <label for=" exampleSelect1" class="form-label mt-4">Select Country<span
                                 style="color:red">*</span></label>
-                        <select class="form-select" id="exampleSelect1">
-                            <option>India</option>
-                            <option>USA</option>
-                            <option>Australia</option>
-                            <option>SriLanka</option>
-                            <option>South Africa</option>
-                        </select>
+
+                        <?php $country_options = array("India", "USA", "Australia", "Sri Lanka", "South Africa");
+                        echo form_dropdown('Country', $country_options, '', 'class="form-control"'); ?>
+
                     </div>
                     <div class="form-group">
                         <label for="exampleSelect1" class="form-label mt-4">Select District<span
                                 style="color:red">*</span></label>
                         <select class="form-select" id="exampleSelect1">
+
                             <option>Gondia</option>
                             <option>Nagpur</option>
                             <option>Bhandara</option>
                             <option>Utah</option>
                             <option>Wyoming</option>
+
                         </select>
                     </div>
                     <fieldset class="form-group">
@@ -67,15 +67,16 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="form-label mt-4">Email address<span
                                 style="color:red">*</span></label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Enter email">
+                        <?php echo form_input(['name' => 'email', 'class' => 'form-control', 'placeholder' => 'Enter your email', 'value' => set_value('email')]); ?>
+                        <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter email"> -->
                         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                                else.</small> -->
+                            else.</small> -->
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1" class="form-label mt-4">Conform Password<span
                                 style="color:red">*</span></label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <?php echo form_password(['name' => 'password', 'class' => 'form-control', 'placeholder' => 'Re-Enter Password']); ?>
                     </div>
                     <div class="form-group">
                         <label for="exampleSelect1" class="form-label mt-4">Select State<span
@@ -107,7 +108,7 @@
                 <div class="d-flex justify-content-center my-4">
                     <button type="reset" class="btn btn-primary">Reset</button>
                     &nbsp;&nbsp;&nbsp;
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Register</button>
                 </div>
             </div>
         </div>

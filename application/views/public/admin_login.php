@@ -2,7 +2,7 @@
 <div class="container">
     <?php echo form_open('login/admin_login', ['class' => 'form-horizontal']); ?>
     <fieldset>
-        <legend>Admin Login</legend>
+        <legend>Login</legend>
         <?php if ($error = $this->session->flashdata('login_failed')) : ?>
         <div class="col-lg-4">
             <div class="alert alert-dismissible alert-danger">
