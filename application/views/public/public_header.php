@@ -31,7 +31,7 @@
                 <a class="navbar-brand" href="<?= base_url('user') ?>">Home</a>
             </li> -->
             <li>
-                <a class="navbar-brand" href="<?= base_url('login/user_register') ?>">Registration</a>
+                <a class="navbar-brand" href="<?= base_url('registration') ?>">Registration</a>
             </li>
             <ul class="nav navbar-nav navbar-right">
                 <!-- <?= anchor('login', 'Login') ?> -->

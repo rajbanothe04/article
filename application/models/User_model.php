@@ -44,4 +44,49 @@ class User_model extends CI_model
 			return true;
 		}
 	}
+	public function get_user_info($id)
+	{
+		$query = $this->db->select("ur.id, ur.name, ur.uname, ur.pword,co.countryname,st.statename,ct.cityname,ur.zip,ur.gender,ur.file")
+			->from("users as ur")
+			->join("country as co", "ur.country = co.id", "left")
+			->join("state as st", "st.id = ur.state", "left")
+			->join("city as ct", "ct.id = ur.city", "left")
+			->where("ur.id", $id)
+			->get();
+		// echo "<pre>";
+		// print_r($query->result());
+		// echo "</pre>";
+		// exit;
+		return $query->result()[0];   // to remove [0] array
+	}
+	public function user_profile($id)
+	{
+		$query = $this->db
+			->select('*')
+			->where('id', $id)
+			->get('users');
+		// echo "<pre>";
+		// print_r($query->result()[0]);
+		// echo "</pre>";
+		// exit;
+		return $query->result()[0];
+	}
+	public function user_update($id, array $post)
+	{
+		return $this->db
+			->where('id', $id)
+			->update('users', $post);
+	}
+	public function img_path($u_id)
+	{
+		$q = $this->db
+			->select('file')
+			->where('id', $u_id)
+			->get('users');
+		return $q->result()[0];
+		// echo "<pre>";
+		// print_r($q->result());
+		// echo "</pre>";
+		// exit;
+	}
 }

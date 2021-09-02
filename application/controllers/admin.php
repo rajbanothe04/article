@@ -7,7 +7,7 @@ class Admin extends My_Controller
 		// $this->load->model('articlesmodel', 'articles');
 		$this->load->library('pagination');
 		$config = [
-			'base_url' => base_url('Admin/dashboard'),
+			'base_url' => base_url('admin/dashboard'),
 			'per_page' => 5,
 			'total_rows' => $this->articles->num_rows(),
 			'full_tag_open' => "<ul class='pagination'>",
@@ -118,15 +118,19 @@ class Admin extends My_Controller
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 	}
-	private function _flashAndRedirect($successful, $successMessage, $failreMessage)
+	private function _flashAndRedirect($successful, $successMessage, $failureMessage)
 	{
 		if ($successful) {
 			$this->session->set_flashdata('feedback', $successMessage);
 			$this->session->set_flashdata('feedback_class', 'alert-success');
 		} else {
-			$this->session->set_flashdata('feedback', $failreMessage);
-			$this->session->sett_flashdata('feedback_class', 'alert-danger');
+			$this->session->set_flashdata('feedback', $failureMessage);
+			$this->session->set_flashdata('feedback_class', 'alert-danger');
 		}
 		return redirect('admin/dashboard');
 	}
+	// public function goto_dashboard()
+	// {
+	// 	$this->load->view('admin/dashboard');
+	// }
 }

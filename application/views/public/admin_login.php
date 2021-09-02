@@ -1,5 +1,12 @@
 <?php include_once('public_header.php'); ?>
 <div class="container">
+    <?php if ($feedback = $this->session->flashdata('feedback')) : ?>
+    <div class="col-lg-4">
+        <div class="alert alert-dismissible alert-success">
+            <?= $feedback ?>
+        </div>
+    </div>
+    <?php endif; ?>
     <?php echo form_open('login/admin_login', ['class' => 'form-horizontal']); ?>
     <fieldset>
         <legend>Login</legend>

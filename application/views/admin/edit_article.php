@@ -35,8 +35,8 @@
             </div>
         </div>
         <br>
-
-        <?php echo form_reset(['name' => 'reset', 'value' => 'Reset', 'class' => 'btn btn-primary']); ?>
+        <?= anchor("admin/dashboard", 'Cancel', ['class' => 'btn btn-primary']); ?>
+        <!-- <?php echo form_reset(['name' => 'reset', 'value' => 'Cancel', 'class' => 'btn btn-primary']); ?> -->
         <?php echo form_submit(['name' => 'submit', 'value' => 'Submit', 'class' => 'btn btn-primary']); ?>
 
     </fieldset>

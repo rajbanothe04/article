@@ -10,7 +10,7 @@
     <?php if ($this->session->flashdata('feedback')) :
         $feedback_class = $this->session->flashdata('feedback_class');
     ?>
-    <div class="col-lg-6">
+    <div class="col-lg-5">
         <div class="alert alert-dismissible <?= $feedback_class ?>">
             <?= $this->session->flashdata('feedback') ?>
         </div>

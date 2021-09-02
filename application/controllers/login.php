@@ -13,7 +13,7 @@ class Login extends CI_Controller
 	{
 		$this->load->library('form_validation');
 		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
-		$this->form_validation->set_rules('username', 'Username', 'required|alpha|trim');
+		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 		if ($this->form_validation->run() == true) {
 			// if (isset($_POST['submit'])) {
@@ -49,10 +49,8 @@ class Login extends CI_Controller
 		$this->session->unset_userdata('user_id');
 		return redirect('login');
 	}
-	public function user_register()
+	public function submit_register()
 	{
-		$this->load->helper('form');
-		$this->load->library('form_validation');
-		$this->load->view('public/user_registration');
+		$this->load->view('public/admin_login');
 	}
 }

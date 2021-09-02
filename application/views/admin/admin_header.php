@@ -30,6 +30,9 @@
                     <a class="navbar-brand" href="<?= base_url('login/logout') ?>">Logout</a>
                     <!-- <?php anchor('login/logout', 'Logout') ?> -->
                 </li>
+                <li>
+                    <a class="navbar-brand" href="<?= base_url('user/user_detils')  ?>">My Profile</a>
+                </li>
 
             </ul>
 

@@ -41,13 +41,14 @@
             </div>
             <div>
                 <?php $upload_error ?>
-                <!-- <?php if (isset($upload_error)) echo $upload_error ?> -->
+                <?php if (isset($upload_error)) echo $upload_error ?>
             </div>
         </div>
         <br>
 
         <?php echo form_reset(['name' => 'reset', 'value' => 'Reset', 'class' => 'btn btn-primary']); ?>
-        <?php echo form_submit(['name' => 'submit', 'value' => 'Submit', 'class' => 'btn btn-primary']); ?>
+        <?php echo form_submit(['name' => 'submit', 'value' => 'Submit', 'class' => 'btn btn-success']); ?>
+        <?= anchor("admin/dashboard", 'Cancel', ['class' => 'btn btn-danger']); ?>
 
     </fieldset>
 
